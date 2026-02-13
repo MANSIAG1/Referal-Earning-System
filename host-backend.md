@@ -114,10 +114,24 @@ pm2 startup
 pm2 save
 ```
 
-**Useful PM2 Commands:**
-- `pm2 status`: Check app status.
-- `pm2 logs referral-backend`: View real-time logs.
-- `pm2 restart referral-backend`: Restart the app.
+### Common PM2 Commands
+
+Manage your application process with these commands:
+
+- **Restart**: `pm2 restart referral-backend`
+  - Use this after pushing new code changes.
+- **Stop**: `pm2 stop referral-backend`
+  - Stops the application without deleting it from the process list.
+- **Delete**: `pm2 delete referral-backend`
+  - Removes the application from the PM2 registry.
+- **Start**: `pm2 start server.js --name "referral-backend"`
+  - Starts the application. Use `--name` to give it a memorable ID.
+- **Logs**: `pm2 logs referral-backend`
+  - View real-time logs for debugging.
+- **Status**: `pm2 status`
+  - View the status of all managed applications.
+- **Monitor**: `pm2 monit`
+  - Detailed dashboard of CPU and Memory usage.
 
 ---
 
