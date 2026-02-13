@@ -11,7 +11,7 @@ const PORT = process.env.PORT || 5000;
 
 // Middleware 
 app.use(cors({
-    origin: process.env.FRONTEND_URL,
+    origin: ["https://luxestream.asprin.dev", "https://referal-earning-system.vercel.app", "http://localhost:5173", process.env.FRONTEND_URL],
     credentials: true
 }));
 app.use(express.json());
