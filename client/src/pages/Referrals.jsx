@@ -19,18 +19,18 @@ const Referrals = () => {
                     <span className="text-lg font-mono font-bold bg-black text-white px-3 py-1 rounded">{currentReferrals} / {maxReferrals} Used</span>
                 </div>
 
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-6">
                     {slots.map((isFilled, index) => (
                         <div
                             key={index}
-                            className={`flex flex-col justify-center items-center p-6 rounded-lg border-2 transition-all duration-300
+                            className={`flex flex-col justify-center items-center p-4 md:p-6 rounded-lg border-2 transition-all duration-300
                                 ${isFilled
                                     ? 'bg-black text-white border-black scale-105 shadow-md'
                                     : 'bg-white text-gray-300 border-gray-200 border-dashed'}`}
                             style={{ height: '140px' }}
                         >
-                            <span className="text-3xl font-bold mb-1">{index + 1}</span>
-                            <span className="text-xs uppercase tracking-widest">{isFilled ? 'Occupied' : 'Empty'}</span>
+                            <span className="text-2xl md:text-3xl font-bold mb-1">{index + 1}</span>
+                            <span className="text-[10px] md:text-xs uppercase tracking-widest">{isFilled ? 'Occupied' : 'Empty'}</span>
                         </div>
                     ))}
                 </div>

@@ -4,7 +4,7 @@ const Landing = () => {
     return (
         <div className="min-h-screen flex flex-col items-center justify-center bg-white text-black">
             <div className="text-center px-4">
-                <h1 className="text-6xl md:text-8xl font-bold uppercase tracking-widest mb-6">LuxeStream</h1>
+                <h1 className="text-3xl sm:text-6xl md:text-8xl font-bold uppercase tracking-widest mb-6">LuxeStream</h1>
                 <p className="text-xl md:text-2xl text-gray-500 mb-12 tracking-wide font-light">
                     Elevate your lifestyle with our premium curated collection.
                 </p>

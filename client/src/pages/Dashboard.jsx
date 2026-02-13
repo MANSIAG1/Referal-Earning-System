@@ -35,7 +35,7 @@ const Dashboard = () => {
 
     return (
         <div className="container mx-auto px-4">
-            <h1 className="text-3xl font-bold mb-8 uppercase tracking-wide">Accessories Collection</h1>
+            <h1 className="text-2xl md:text-3xl font-bold mb-8 uppercase tracking-wide">Accessories Collection</h1>
             {message && <div className="p-4 mb-4 bg-green-100 border border-green-400 text-green-700 rounded-md">{message}</div>}
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
