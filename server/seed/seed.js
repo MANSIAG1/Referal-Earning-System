@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
-const Product = require('./models/Product');
+const Product = require('../models/Product');
 require('dotenv').config();
+
+// if db is empty i run this script so product gets saved in 
+// db as total hardcoded looks bad lol
 
 const products = [
     {

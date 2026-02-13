@@ -39,7 +39,7 @@ const MyPurchases = () => {
                                     <td className="py-4 px-4 font-medium">{order.productName}</td>
                                     <td className="py-4 px-4 text-right">₹{order.price}</td>
                                     <td className="py-4 px-4 text-center">
-                                        <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full uppercase font-bold tracking-wide">Completed</span>
+                                        <span className="border border-green-700 text-green-700 text-xs px-3 py-1 font-bold tracking-widest uppercase">Completed</span>
                                     </td>
                                 </tr>
                             ))}

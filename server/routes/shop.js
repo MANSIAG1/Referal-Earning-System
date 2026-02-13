@@ -33,7 +33,7 @@ router.post('/purchase', auth, async (req, res) => {
 
         const buyer = await User.findById(req.user.id);
 
-        // Save Purchase History regardless of price
+        // Save Purchase History regardless of price - as i dont want to waste this info of user 
         buyer.purchaseHistory.push({
             productId: product._id,
             productName: product.name,
@@ -45,7 +45,7 @@ router.post('/purchase', auth, async (req, res) => {
             return res.json({ msg: `Purchase successful. No earnings distributed (Price ₹${price} <= ₹1000).` });
         }
 
-        // Level 1: Direct Parent
+        // Level 1: Direct Parent - 1st 
         if (buyer.referredBy) {
             const level1Parent = await User.findById(buyer.referredBy);
             if (level1Parent) {
@@ -67,7 +67,7 @@ router.post('/purchase', auth, async (req, res) => {
             }
         }
 
-        // History saved above
+        // History saved above 
 
         res.json({ msg: 'Purchase successful. Earnings distributed if applicable.' });
     } catch (err) {
