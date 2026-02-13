@@ -11,7 +11,7 @@ export const AuthProvider = ({ children }) => {
     const [token, setToken] = useState(localStorage.getItem('token'));
 
     // Configure axios defaults
-    axios.defaults.baseURL = 'http://localhost:5000/api';
+    axios.defaults.baseURL = import.meta.env.VITE_API_BASE_URL;
     if (token) {
         axios.defaults.headers.common['Authorization'] = token;
     } else {
