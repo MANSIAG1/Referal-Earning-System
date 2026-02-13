@@ -11,8 +11,22 @@ This is a full-stack web application that implements a multi-level referral syst
 - **Admin Dashboard**: Create products with specific profit margins.
 - **Real-time Earnings**: Dashboard updates earnings in real-time.
 - **Responsive Design**: Built with React and TailwindCSS for mobile and desktop compatibility.
-- **API Documentation**: Detailed API documentation available in [API_DOCUMENTATION.md](./API_DOCUMENTATION.md).
+- **API Documentation**: Detailed API documentation available in [api-docs](./api-docs.md).
 - **Postman Collection**: Import [postman_collection.json](./postman_collection.json) to test API endpoints.
+
+## Screenshots
+
+### Landing Page
+![Landing Page](./screenshots/landingpage.png)
+
+### Profile Page with Referral URL
+![Profile Page with Referral URL](./screenshots/profilepage-referalurl.png)
+
+### Referral Slots
+![Referral Slots](./screenshots/referalslots.png)
+
+### Shop Page
+![Shop Page](./screenshots/shoppage.png)
 
 ## Prerequisites
 
