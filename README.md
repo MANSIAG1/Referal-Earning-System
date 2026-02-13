@@ -1,50 +1,113 @@
-Referral Earning System
+# Referral Earning System
 
-This is a full-stack web application I built that implements a multi-level referral system. It tracks purchases and distributes earnings automatically to users based on who referred them.
+This is a full-stack web application that implements a multi-level referral system. It tracks purchases and distributes earnings automatically to users based on who referred them.
 
-Features:
+## Features
 
-- It has a multi-level referral system that tracks direct and indirect referrals.
-- Direct Referrals: You earn 5% of the profit if someone you referred makes a purchase.
-- Indirect Referrals: You earn 1% of the profit if someone referred by your referral makes a purchase.
-- I used JWT and bcrypt for secure signup and login.
-- There are admin features to create products with specific profit margins.
-- The dashboard updates your earnings in real-time.
-- The UI is responsive and works well on mobile and desktop since I used React and TailwindCSS.
+- **Multi-level Referral System**: Tracks direct and indirect referrals.
+  - **Direct Referrals**: Earn 5% of the profit when a direct referral makes a purchase.
+  - **Indirect Referrals**: Earn 1% of the profit when a referral's referral makes a purchase.
+- **Secure Authentication**: Uses JWT and bcrypt for secure signup and login.
+- **Admin Dashboard**: Create products with specific profit margins.
+- **Real-time Earnings**: Dashboard updates earnings in real-time.
+- **Responsive Design**: Built with React and TailwindCSS for mobile and desktop compatibility.
+- **API Documentation**: Detailed API documentation available in [API_DOCUMENTATION.md](./API_DOCUMENTATION.md).
+- **Postman Collection**: Import [postman_collection.json](./postman_collection.json) to test API endpoints.
 
-Prerequisites:
+## Prerequisites
 
-Before you start, make sure you have Node.js and npm installed on your machine.
-You also need to have MongoDB running. You can either install it locally or use a cloud version like MongoDB Atlas.
+Before you start, make sure you have the following installed on your machine:
 
-Installation and Setup:
+- [Git](https://git-scm.com/)
+- [Node.js](https://nodejs.org/) (which includes npm)
+- [MongoDB](https://www.mongodb.com/) (Local or Atlas)
 
-1. First, clone this repository to your computer.
+## Installation and Setup
 
-2. Setting up the Backend (Server):
-   Go into the server folder and run npm install to get all the dependencies.
-   You need to create a .env file in the server folder.
-   In that file, add your PORT (like 5000), your MONGO_URI (your database connection string), and a JWT_SECRET (any secret key for security).
-   Once that is done, run npm start or node server.js to start the server.
+Follow these steps to set up the project locally.
 
-3. Setting up the Frontend (Client):
-   Go into the client folder and run npm install.
-   Then run npm run dev to start the application.
-   It should open up in your browser.
+### 1. Clone the Repository
 
-Folder Structure:
+```bash
+git clone https://github.com/MANSIAG1/Referal-Earning-System
+cd Referal-Earning-System
+```
 
-I organized this project with a client folder for the frontend and a server folder for the backend.
-I think this is better because it completely separates the user interface code from the server logic.
-This makes it easier to work on one side without breaking the other.
-The backend follows a structure with models and routes, which keeps the code clean.
-The frontend uses Vite, which makes the development server much faster than standard React apps.
+### 2. Backend Setup (Server)
 
-Test Cases:
+Navigate to the server directory, install dependencies, and configure the environment.
 
-I included integration tests in the server/tests folder, specifically main.test.js.
-I think these are better than simple unit tests because they simulate a real-world scenario.
-The test creates User A, who refers User B, who refers User C. Then User C buys a product.
-The test automatically checks if User B got their 5% and User A got their 1%.
-This ensures the money logic is actually working with the database.
-You can run these tests by going to the server folder and running node tests/main.test.js.
+```bash
+cd server
+npm install
+```
+
+**Create a `.env` file** in the `server` directory and add the following variables:
+
+```env
+PORT=5000
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_jwt_secret_key
+FRONTEND_URL=http://localhost:5173
+```
+
+**Start the Server:**
+
+```bash
+npm start
+# OR
+node server.js
+```
+
+**Run Test Cases:**
+
+To verify the referral logic (User A -> User B -> User C chain), run the integration tests:
+
+```bash
+node tests/main.test.js
+```
+
+**Seed the Database (Optional):**
+
+To populate the database with synthetic product data for testing:
+
+```bash
+node seed/seed.js
+```
+
+### 3. Frontend Setup (Client)
+
+Open a new terminal, navigate to the client directory, and install dependencies.
+
+```bash
+cd ../client
+npm install
+```
+
+**Create a `.env` file** in the `client` directory and add the API URL:
+
+```env
+VITE_API_BASE_URL=http://localhost:5000/api
+```
+
+**Start the Client:**
+
+```bash
+npm run dev
+```
+
+The application should now be running at `http://localhost:5173`.
+
+## Folder Structure
+
+- **`client/`**: Frontend code (React + Vite + TailwindCSS). Separated for clean UI logic.
+- **`server/`**: Backend code (Node.js + Express + MongoDB). Follows a Model-Route-Controller pattern.
+
+## Test Cases
+
+Integration tests are located in `server/tests/main.test.js`.
+These tests simulate real-world scenarios:
+1. Creating User A, User B, and User C.
+2. Establishing a referral chain (A -> B -> C).
+3. User C making a purchase.
+4. Verifying that User B receives 5% and User A receives 1% profit.

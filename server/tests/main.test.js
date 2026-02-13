@@ -10,7 +10,7 @@ const http = require('http');
 const Product = require('../models/Product');
 
 let server;
-const PORT = 5001; // i dont want to crash my server
+const PORT = 5003; // i dont want to crash my server
 const API_URL = `http://localhost:${PORT}/api`;
 
 async function startTestServer() {

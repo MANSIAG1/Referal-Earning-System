@@ -80,7 +80,7 @@ Add configuration:
 nginx
 server {
     listen 80;
-    server_name your_domain_or_ip;
+    server_name luxestream.asprin.dev;
     location / {
         proxy_pass http://localhost:5000; # Change port if needed
         proxy_http_version 1.1;
