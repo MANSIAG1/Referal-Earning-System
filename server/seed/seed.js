@@ -47,6 +47,13 @@ const products = [
         profit: 4000,
         description: 'Style your hair with air, no extreme heat.',
         imageUrl: 'https://dyson-h.assetsadobe2.com/is/image/content/dam/dyson/leap-petite-global/markets/singapore/products/hair-care/supersonic/0_Primary-800x1200_SSNural-BlueTopaz_attachments_case.png'
+    },
+    {
+        name: 'Gold platted ring',
+        price: 300000,
+        profit: 3500,
+        description:'gold platted ring shiny more than your face',
+        imageUrl:'https://img.freepik.com/free-psd/solitaire-diamond-engagement-ring-symbol-love-commitment_191095-83418.jpg?semt=ais_user_personalization&w=740&q=80'
     }
 ];
 
